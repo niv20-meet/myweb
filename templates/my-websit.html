@@ -19,6 +19,40 @@
   <li style="float:right"><a class="active" href="#about">About</a></li>
 </ul>
 </div>
+
+<!-- Slideshow container -->
+<div class="slideshow-container1">
+
+  <!-- Full-width slides/quotes -->
+  <div class="mySlides1">
+    <q>“Great photography is about depth of feeling, not depth of field.”</q>
+    <p class="author1">- Peter Adams</p>
+  </div>
+
+  <div class="mySlides1">
+    <q>“Photography helps people to see.”</q>
+    <p class="author1">- Berenice Abbott</p>
+  </div>
+
+  <div class="mySlides1">
+    <q>I have not failed. I've just found 10,000 ways that won't work.</q>
+    <p class="author1">- Thomas A. Edison</p>
+  </div>
+
+  <!-- Next/prev buttons -->
+  <a class="prev1" onclick="plusSlides1(-1)">&#10094;</a>
+  <a class="next1" onclick="plusSlides1(1)">&#10095;</a>
+
+
+<!-- Dots/bullets/indicators -->
+<div class="dot-container1">
+  <span class="dot1" onclick="currentSlide1(1)"></span> 
+  <span class="dot1" onclick="currentSlide1(2)"></span> 
+  <span class="dot1" onclick="currentSlide1(3)"></span> 
+</div>
+</div>
+
+
 <!-- slide start from here -->
 <div class="slideshow-container">
 
@@ -61,12 +95,7 @@
 
 </p>
 
-<p id="about">
-  <br>test
-
-</p>
-
-
+<iframe  id="news"  src="https://www.youtube.com/embed/wZdP6zQkaE0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <script >
   var slideIndex = 1;
@@ -97,6 +126,44 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block"; 
   dots[slideIndex-1].className += " active";
 }
+
+
+  
+</script>
+<script type="text/javascript">
+  var slideIndex1 = 1;
+showSlides1(slideIndex1);
+
+// Next/previous controls
+function plusSlides1(n) {
+  showSlides1(slideIndex1 += n);
+}
+
+// Thumbnail image controls
+function currentSlide1(n) {
+  showSlides1(slideIndex1 = n);
+}
+
+function showSlides1(n) {
+  var i1;
+  var slides1 = document.getElementsByClassName("mySlides1");
+  var dots1 = document.getElementsByClassName("dot1");
+  if (n > slides1.length) {slideIndex1 = 1} 
+  if (n < 1) {slideIndex1 = slides1.length}
+  for (i = 0; i < slides1.length; i++) {
+      slides1[i].style.display = "none"; 
+  }
+  for (i = 0; i < dots1.length; i++) {
+      dots1[i].className = dots1[i].className.replace(" active1", "");
+  }
+  slides1[slideIndex1-1].style.display = "block"; 
+  dots1[slideIndex1-1].className += " active1";
+  slideIndex1++;
+  if (slideIndex1 > slides1.length) {slideIndex1 = 1} 
+
+  setTimeout(showSlides1, 4000);
+}
+
 </script>
 
 </body>
